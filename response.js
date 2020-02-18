@@ -31,7 +31,7 @@ screen.addEventListener('click',function(){
 
 
         endTime=Date.now();
-        console.log('your response time is : ',(endTime-startTime)/1000,'ms');
+        console.log('your response time is : ',(endTime-startTime)/1000,'ms');//<-',' added
 
         screen.classList.remove('now');
         screen.classList.add('waiting');
