@@ -25,6 +25,10 @@ screen.addEventListener('click',function(){
     else if(screen.classList.contains('ready')){
       if(!startTime){//if cheating happen,
           clearTimeout(timeOut);
+          
+        screen.classList.remove('now');
+        screen.classList.add('waiting');
+        screen.textContent='You cant start Yet!!';
       }
       else{
         screen.classList.remove('ready');
