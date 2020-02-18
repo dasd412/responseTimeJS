@@ -2,9 +2,10 @@
 
 const screen=document.querySelector("#screen");
 
+let startTime,endTime;//variable gloabalizing 
 
 screen.addEventListener('click',function(){
-    let startTime;
+   
 
 
     if(screen.classList.contains('waiting')){
@@ -14,7 +15,7 @@ screen.addEventListener('click',function(){
         screen.textContent='If it is green, then click!';
         
         setTimeout(function(){
-            startTime=new Date();
+            startTime=Date.now();
             screen.click();
         },Math.floor(Math.random()*1000)+2000);
 
@@ -28,8 +29,9 @@ screen.addEventListener('click',function(){
       
     }else if(screen.classList.contains('now')){
 
-        let endTime=new Date();
-        console.log('your response time is : '(endTime-startTime)/1000,'ms');
+
+        endTime=Date.now();
+        console.log('your response time is : ',(endTime-startTime)/1000,'ms');
 
         screen.classList.remove('now');
         screen.classList.add('waiting');
